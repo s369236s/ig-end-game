@@ -39,6 +39,22 @@
     .foo {
       margin-top: 1rem;
     }
+    .video-js {
+      width: 1000px !important;
+      height: 600px !important;
+    }
+    @media screen and (max-width: 500px) {
+      .video-js {
+        width: 400px !important;
+        height: 300px !important;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .video-js {
+        width: 310px !important;
+        height: 200px !important;
+      }
+    }
   </style>
   <body>
     <div class="foo"><h5>建議放大獲得最佳體驗</h5></div>
@@ -50,8 +66,6 @@
       class="video-js vjs-theme-city"
       controls
       preload="auto"
-      width="400"
-      height="300"
       poster="MY_VIDEO_POSTER.jpg"
       data-setup="{}"
     >
