@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://unpkg.com/video.js@7/dist/video-js.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+
+  <style>
+    body,
+    html {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .vjs-big-play-button {
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+    h5 {
+      font-size: 1.15rem;
+      margin: 0;
+    }
+    h4 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .foo {
+      margin-top: 1rem;
+    }
+  </style>
+  <body>
+    <div class="foo"><h5>建議放大獲得最佳體驗</h5></div>
+    <div><h4>👇點擊我觀看結局</h4></div>
+
+    <video
+      style="margin-top: 1rem"
+      id="my-video"
+      class="video-js vjs-theme-city"
+      controls
+      preload="auto"
+      width="400"
+      height="300"
+      poster="MY_VIDEO_POSTER.jpg"
+      data-setup="{}"
+    >
+      <source src="video/video.mp4" type="video/mp4" />
+      <p class="vjs-no-js">
+        您的瀏覽器不支援影片播放器，請使用Chrome,FireFox瀏覽器
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+          >更多資訊</a
+        >
+      </p>
+    </video>
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+  </body>
+</html>
