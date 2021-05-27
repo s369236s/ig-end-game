@@ -9,7 +9,7 @@
       href="https://unpkg.com/video.js@7/dist/video-js.min.css"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
 
@@ -66,7 +66,6 @@
       class="video-js vjs-theme-city"
       controls
       preload="auto"
-      poster="MY_VIDEO_POSTER.jpg"
       data-setup="{}"
     >
       <source src="video/video.mp4" type="video/mp4" />
@@ -77,6 +76,58 @@
         >
       </p>
     </video>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p>
+          「原來鄭好和穎穎的離婚暗藏這麼多內幕阿，如果只看一開始的新聞，根本沒料到事情的真相，幸好我自己遣入她們加，才能挖出真正的內幕，寫出一篇真實又精準的新聞！」記者陳筱美
+        </p>
+        <p>
+          嗨！這裡是CTRLZ
+          STUDIO，很開心你參與這次的線上解謎的遊戲，並玩到最後看到了結局，你打敗了「百分之九十」的人！
+        </p>
+        <p>
+          我們想要傳遞媒體雖然是我們獲取新聞的來源，但也會因為立場關係造成選取、呈現、詮釋的偏頗，我們前導的限時新聞讓穎穎看起來是受害者、或是新聞捕風捉影來歷不明，因此我們希望日後大家擁有媒體識讀的能力！
+        </p>
+        <p>
+          希望大家喜歡我們製作的IG線上解謎遊戲，如果喜歡請追蹤我們、分享在限時動態讓你的朋友體驗我們的遊戲，在疫情期間可以在家燒腦一下！謝謝大家♡
+        </p>
+        <div class="link">
+          <a href="https://www.instagram.com/studio.ctrl.z/" class="foo"
+            ><img src="ig.png" alt="" />
+            <p>studio.ctrl.z</p></a
+          >
+        </div>
+        <img src="logo.jpg" class="logo" alt="" />
+      </div>
+    </div>
     <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+    <script>
+      const vid = videojs(document.querySelector(".video-js"));
+      const modal = document.getElementById("myModal");
+      let foo;
+      vid.on("ended", () => {
+        console.log("end");
+        boo = setInterval(check, 500);
+      });
+
+      const check = () => {
+        console.log("val");
+        if (!vid.isFullscreen()) {
+          clearInterval(boo);
+          const foo = document.querySelector(".modal-content");
+          modal.style.display = "block";
+          setTimeout(() => {
+            var modal = document.getElementById("myModal");
+            foo.style.transition = "1s";
+            foo.style.display = "flex";
+          }, 50);
+          setTimeout(() => {
+            foo.style.margin = "20px auto";
+          }, 110);
+        }
+      };
+    </script>
   </body>
 </html>
